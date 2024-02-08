@@ -1,0 +1,7 @@
+
+10 * 20 = 200
+from USD to SGD = 67.06 SGD
+from USD to JPY = 73.37 JPY
+from CAD to SAR = 139.37 SAR
+10 * 50 = 500
+50 * 60 = 3000
