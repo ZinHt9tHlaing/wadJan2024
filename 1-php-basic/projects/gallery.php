@@ -26,10 +26,14 @@ $photos = array_filter(scandir("photos"), fn ($el) => $el != "." && $el != "..")
 // print_r($photos)
 ?>
 
-<div class=" columns-3 mt-5">
+<div class=" columns-3 gap-3 mt-5">
     <?php foreach ($photos as $photo) : ?>
-        <img class=" mb-3" src="photos/<?= $photo ?>" alt="">
-        <!-- <p><?= $photo ?></p> -->
+        <div class=" inline-block relative group mb-3">
+            <img class=" rounded-lg" src="photos/<?= $photo ?>" alt="">
+            <a onclick="return confirm('Are you sure to delete?')" href="./gallery-photo-delete.php?file_name=<?= $photo ?>" class=" absolute bottom-0 right-0 py-3 px-4 hidden pointer-events-none group-hover:inline-flex group-hover:pointer-events-auto gap-x-2 text-center text-sm font-semibold rounded-lg border border-transparent bg-red-100 text-red-800 hover:bg-red-200 disabled:opacity-50 disabled:pointer-events-none dark:hover:bg-red-900 dark:text-red-500 dark:hover:text-red-400 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600 active:scale-90">
+                Delete
+            </a>
+        </div>
     <?php endforeach; ?>
 </div>
 
